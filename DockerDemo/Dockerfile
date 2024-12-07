@@ -1,4 +1,11 @@
 FROM ubuntu
-RUN mkdir /bin
+
 COPY assignment.sh /bin
-CMD /bin/assignment.sh
+
+RUN chmod +x /bin/assignment.sh
+
+
+
+RUN /bin/assignment.sh
+EXPOSE 8080
+CMD ["nginx", "-g", "daemon off;"]
